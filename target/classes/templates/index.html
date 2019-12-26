@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tivo is a free HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
+    <!-- Website Title -->
+    <title>Login</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="/login"><img src="images/logo.svg" alt="alternative"></a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="/login">HOME <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <span class="nav-item">
+                    <a class="btn-outline-sm" href="/login">LOG IN</a>
+                </span>
+        </div>
+    </div> <!-- end of container -->
+</nav> <!-- end of navbar -->
+<!-- end of navigation -->
+
+
+<!-- Header -->
+<header id="header" class="ex-2-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Log In</h1>
+                <p>您没有账号？请先 <a class="white" href="/toregister">注册</a></p>
+                <!-- Sign Up Form -->
+                <div class="form-container">
+                    <form action="/checkLogin" >
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="phone" name="phone" required>
+                            <label class="label-control"  for="phone">电话号码</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control-input" id="passWord" name="passWord" required>
+                            <label class="label-control" for="passWord">密码</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">登录</button>
+                        </div>
+						<div class="form-group">
+                            <a href="/toTouristAllLost" >
+                                <button type="button" class="form-control-submit-button">游客进入</button>
+                            </a>
+                        </div>
+                        <div class="form-message">
+                            <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                </div> <!-- end of form container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</header> <!-- end of ex-header -->
+<!-- end of header -->
+
+
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+<script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+<script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+<script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+<script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+<script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+<script src="js/scripts.js"></script> <!-- Custom scripts -->
+<!--thymeleaf在Js中使用-->
+<script th:inline="javascript">
+    var mess = [[${message}]];
+    console.log(mess);
+    if (mess != null && mess != ''){
+        alert(mess)
+    }
+</script>
+</body>
+</html>
